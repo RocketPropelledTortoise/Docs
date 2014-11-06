@@ -63,7 +63,7 @@ function writeToc($base_url, $sections, $destination)
         $content .= "<li><strong>$section</strong><ul class=nav>\n";
         foreach ($pages as $page) {
             $page = str_replace('.md', '', $page);
-            $content .= "<li><a href='$base_url/$section/$page.html'>$page</a></li>\n";
+            $content .= "<li><a href='{{site.github.url}}$base_url/$section/$page.html'>$page</a></li>\n";
         }
         $content .= "</ul></li>\n";
     }
@@ -154,7 +154,7 @@ $content = "";
 foreach ($homepage as $project => $components) {
     $content .= "\n## $project\n";
     foreach ($components as $component => $link) {
-        $content .= "### [$component](/$project/$component/$link)\n";
+        $content .= "### [$component]({{site.github.url}}/$project/$component/$link)\n";
     }
 }
 

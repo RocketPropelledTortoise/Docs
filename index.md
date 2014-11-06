@@ -4,7 +4,7 @@ title: Index
 ---
 
 ## UI
-### [Assets](/UI/Assets/Getting Started/Introduction.html)
-### [Forms](/UI/Forms/Getting Started/Introduction.html)
-### [Foundation](/UI/Foundation/Getting Started/Introduction.html)
-### [Script](/UI/Script/Getting Started/Introduction.html)
+### [Assets]({{site.github.url}}/UI/Assets/Getting Started/Introduction.html)
+### [Forms]({{site.github.url}}/UI/Forms/Getting Started/Introduction.html)
+### [Foundation]({{site.github.url}}/UI/Foundation/Getting Started/Introduction.html)
+### [Script]({{site.github.url}}/UI/Script/Getting Started/Introduction.html)
