@@ -19,6 +19,8 @@ A slightly better syntax is in preparation for PHP and Blde, but is not ready ri
 ## Twig
 With the twig extension, it is very easy to create form fields with a fluid syntax
 
-    {% form 'email' 'Adresse E-mail' 'email' width(6) %}
-    {% form 'password' 'Mot de passe' 'password' width(6) %}
-    {% form 'remember' 'Se souvenir de moi' 'checkbox' width(6) %}
+```
+    {{ "{% form 'email' 'Adresse E-mail' 'email' width(6) " }}%}
+    {{ "{% form 'password' 'Mot de passe' 'password' width(6) " }}%}
+    {{ "{% form 'remember' 'Se souvenir de moi' 'checkbox' width(6) " }}%}
+```
