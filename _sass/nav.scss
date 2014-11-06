@@ -2,6 +2,10 @@
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
+	
+	strong {
+		color:#ff8559;
+	}
 
     > li {
         position: relative;
@@ -13,12 +17,11 @@
             padding: 4px 8px;
             font-size: 13px;
             font-weight: 500;
-            color: #666;
+            color: #ff8559;
 
             &:hover,
             &:focus {
                 text-decoration: none;
-                background-color: #eee
             }
 
             > img {
@@ -34,7 +37,6 @@
                 color: #999;
                 text-decoration: none;
                 cursor: not-allowed;
-                background-color: transparent
             }
         }
     }
@@ -42,22 +44,13 @@
     .open > a,
     .open > a:hover,
     .open > a:focus {
-        background-color: #eee;
         border-color: #428bca
-    }
-
-    .nav-divider {
-        height: 1px;
-        margin: 9px 0;
-        overflow: hidden;
-        background-color: #e5e5e5
     }
 }
 
 /*
  * Sub styling
  */
-
 .nav .nav {
     > li > a {
         padding-left: 15px;
@@ -95,7 +88,6 @@
 .nav > .active:focus > a {
     font-weight: 700;
     color: #39C;
-    background-color: transparent;
     border-left: 2px solid #39C;
     margin-left:-2px;
 }
