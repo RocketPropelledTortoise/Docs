@@ -1,0 +1,9 @@
+exclude:
+  - src
+
+markdown: redcarpet
+redcarpet:
+    extensions: [with_toc_data]
+
+sass:
+    sass_dir: _sass
