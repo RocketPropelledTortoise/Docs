@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-assets
 title: Changelog
+layout: toc_ui-assets
+component: UI / Assets
+
 ---
 # Changelog
 

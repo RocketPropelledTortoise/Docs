@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-foundation
 title: Sections
+layout: toc_ui-foundation
+component: UI / Foundation
+
 ---
 # Template Sections
 

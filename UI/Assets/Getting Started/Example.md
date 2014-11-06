@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-assets
 title: Example
+layout: toc_ui-assets
+component: UI / Assets
+
 ---
 
 ### Declare a library

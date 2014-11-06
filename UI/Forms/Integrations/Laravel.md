@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-forms
 title: Laravel
+layout: toc_ui-forms
+component: UI / Forms
+
 ---
 # Laravel
 

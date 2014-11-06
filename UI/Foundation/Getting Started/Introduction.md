@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-foundation
 title: Introduction
+layout: toc_ui-foundation
+component: UI / Foundation
+
 ---
 # Introduction
 

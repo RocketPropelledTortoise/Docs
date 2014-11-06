@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-forms
 title: Installation
+layout: toc_ui-forms
+component: UI / Forms
+
 ---
 ## Install
 

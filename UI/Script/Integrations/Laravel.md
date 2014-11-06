@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-script
 title: Laravel
+layout: toc_ui-script
+component: UI / Script
+
 ---
 # Laravel
 

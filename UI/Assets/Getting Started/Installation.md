@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-assets
 title: Installation
+layout: toc_ui-assets
+component: UI / Assets
+
 ---
 ## Service Provider
 

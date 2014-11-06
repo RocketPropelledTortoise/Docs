@@ -42,14 +42,17 @@ function mkdirIfNonExistent($dir)
     }
 }
 
-function addHeaderToPage($source, $destination, $layout)
+function addHeaderToPage($source, $destination, array $options)
 {
     l("Preparing $destination");
     $content = file_get_contents($source);
 
-    $header = "---\nlayout: $layout\ntitle: " . basename($destination, ".md") . "\n---\n";
+    $header = "title: " . basename($destination, ".md") . "\n";
+	foreach($options as $key => $value) {
+		$header .= "$key: $value\n";
+	}
 
-    file_put_contents($destination, $header . $content);
+    file_put_contents($destination, "---\n$header\n---\n$content");
 }
 
 function writeToc($base_url, $sections, $destination)
@@ -131,7 +134,11 @@ foreach ($files as $project => $components) {
         ) {
             $homepage[$project][$component] = "Getting Started/Introduction.html";
         } else {
-            addHeaderToPage("$templates/dummy_index.md", "$docpath/$project/$component/index", $toc);
+            addHeaderToPage(
+				"$templates/dummy_index.md",
+				"$docpath/$project/$component/index",
+				['layout' => $toc, 'component' => "$project / $component"]
+			);
             $homepage[$project][$component] = "";
         }
 
@@ -142,7 +149,7 @@ foreach ($files as $project => $components) {
                 addHeaderToPage(
                     "$basepath/$project/$component/$section/$page",
                     "$docpath/$project/$component/$section/$page",
-                    $toc
+                    ['layout' => $toc, 'component' => "$project / $component"]
                 );
             }
         }
@@ -158,5 +165,5 @@ foreach ($homepage as $project => $components) {
     }
 }
 
-$header = "---\nlayout: default\ntitle: Index\n---\n";
+$header = "---\nlayout: default\ntitle: Index\ncomponent: Documentation\n---\n";
 file_put_contents("$docpath/index.md", $header . $content);

@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-assets
 title: Dependencies
+layout: toc_ui-assets
+component: UI / Assets
+
 ---
 # Dependencies
 

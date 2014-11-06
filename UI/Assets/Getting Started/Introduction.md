@@ -1,6 +1,8 @@
 ---
-layout: toc_ui-assets
 title: Introduction
+layout: toc_ui-assets
+component: UI / Assets
+
 ---
 # Introduction
 
