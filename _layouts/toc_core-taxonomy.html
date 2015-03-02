@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include header.html %}
+  </head>
+  <body>
+    {% include nav.html %}
+
+    <aside id=nav>{% include toc_core-taxonomy.html %}</aside>
+    <section id=content>{{ content }}</section>
+    
+    {% include footer.html %}
+  </body>
+</html>

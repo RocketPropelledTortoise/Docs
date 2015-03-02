@@ -4,6 +4,9 @@ title: Index
 component: Documentation
 ---
 
+## Core
+### [Taxonomy]({{site.github.url}}/Core/Taxonomy/Getting Started/Introduction.html)
+
 ## UI
 ### [Assets]({{site.github.url}}/UI/Assets/Getting Started/Introduction.html)
 ### [Forms]({{site.github.url}}/UI/Forms/Getting Started/Introduction.html)
