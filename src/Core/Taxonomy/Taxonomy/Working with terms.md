@@ -9,7 +9,7 @@ A term can be one language or more
 
     integer Taxonomy::getTermId(string $title, string|integer $vocabulary_id, integer $language_id = null, integer $type = Taxonomy::TERM_CONTENT)
 
-The minimum to create a term is the title and the vocabulary_id, apart from `getTermIds` everywhere a `vocabulary_id` is requested, you can use the vocabulary name or its id.<br />
+The minimum to create a term is the title and the `vocabulary_id`, apart from `getTermIds` everywhere a `vocabulary_id` is requested, you can use the vocabulary name or its id.<br />
 `Taxonomy::getTermId('A term', 'tag')` or `Taxonomy::getTermId('A term', Taxonomy::vocabulary('tag'))` both work
 
 By default, if you don't specify the language, it will use the current language.
@@ -100,6 +100,7 @@ To check if a language is already translated or not there is the `translated` me
 ### Simple term or category ?
 
 A term can be one of `Taxonomy::TERM_CONTENT` or `Taxonomy::TERM_CATEGORY` this can be checked with
+
 
     $term->getType();
 
