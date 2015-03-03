@@ -1,5 +1,3 @@
-# Changelog
-
 ## Future
 
 - Finish unit tests

@@ -4,8 +4,6 @@ layout: toc_core-taxonomy
 component: Core / Taxonomy
 
 ---
-# Changelog
-
 ## Future
 
 - Finish unit tests

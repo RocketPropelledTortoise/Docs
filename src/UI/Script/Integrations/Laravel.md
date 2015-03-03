@@ -1,5 +1,3 @@
-# Laravel
-
 With the laravel Integration you benefit from
 
 - The container that can hold an instance of the JS Class

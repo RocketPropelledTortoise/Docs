@@ -1,5 +1,3 @@
-# Changelog
-
 ## Future
 - Finish Documentation
 - Finish binding to Laravel Validator

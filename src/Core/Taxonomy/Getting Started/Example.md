@@ -1,9 +1,7 @@
 
-### Declare a library
+## Using the Taxonomy module
 
-To declare a library you have to listen for the `rocket.assets.js` and `rocket.assets.css` events.
-
-Here is an example taken from a RocketPropelledTortoise Library
+In this example, we use the table `posts` as our content and will add some tags to it.
 
 ```php
 use Taxonomy;
@@ -20,7 +18,6 @@ class Post extends Model {
 
     public $fillable = ['content'];
 }
-
 
 Vocabulary::insert(['name' => 'Tag', 'machine_name' => 'tag', 'hierarchy' => 0, 'translatable' => true]);
 

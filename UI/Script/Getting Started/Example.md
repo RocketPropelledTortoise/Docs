@@ -4,8 +4,6 @@ layout: toc_ui-script
 component: UI / Script
 
 ---
-# Example
-
 ``` php
 JS::ready(' console.log("you\'re a wizard, Harry!"); ');
 JS::ready(' console.log("Dobby is freeeee!"); ');

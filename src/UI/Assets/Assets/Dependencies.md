@@ -1,5 +1,3 @@
-# Dependencies
-
 The libraries can depend on each other, there are different options available for this
 
 ### Libraries loading order

@@ -1,9 +1,9 @@
-# Working with terms
 
-A term contains a __title__ and a __description__.<br />
-A term is a simple term or a category<br />
-A term can be one language or more
+The basic definition of a term is:
 
+- A term contains a __title__ and a __description__.
+- A term is a simple term or a category
+- A term can be one language or more
 
 ## Term creation
 

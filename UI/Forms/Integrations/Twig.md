@@ -4,8 +4,6 @@ layout: toc_ui-forms
 component: UI / Forms
 
 ---
-# Twig
-
 There is an extension for Twig to allow you to simply create forms with.
 
 ```php

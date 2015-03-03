@@ -1,5 +1,3 @@
-# Example
-
 ## PHP
 A slightly better syntax is in preparation for PHP and Blde, but is not ready right now
 

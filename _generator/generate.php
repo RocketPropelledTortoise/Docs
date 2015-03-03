@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';
 
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Yaml\Parser;
 
 
 // Configuration
@@ -15,6 +16,24 @@ $templates = __DIR__ . '/templates';
 
 // Helpers
 //------------------------------
+
+function check_diff_multi($array1, $array2){
+	$result = array();
+	foreach($array1 as $key => $val) {
+		if(isset($array2[$key])){
+       		if(is_array($val) && $array2[$key]){
+				$res = check_diff_multi($val, $array2[$key]);
+				if (!empty($res)) {
+					$result[$key] = $res;
+				} 
+			}
+		} else {
+			$result[$key] = $val;
+		}
+    }
+
+    return $result;
+}
 
 function l($text)
 {
@@ -57,20 +76,45 @@ function addHeaderToPage($source, $destination, array $options)
 
 function writeToc($base_url, $sections, $destination)
 {
-    l("Generating Table of content in $destination");
+	global $basepath;
+	
+	l("Generating Table of content in $destination");
+	
+	$clean_sections = [];
+    foreach ($sections as $section => $pages) {
+        foreach ($pages as $page) {
+            $clean_sections[$section][] = str_replace('.md', '', $page);
+        }
+    }
+
+	$final_sections = $clean_sections;
+	if (file_exists($basepath . $base_url . "/toc.yml")) {
+		$final_sections = (new Parser())->parse(file_get_contents($basepath . $base_url . "/toc.yml"));
+		
+		$not_in_files = check_diff_multi($final_sections, $clean_sections);
+		foreach($not_in_files as $section => $pages) {
+			foreach ($pages as $page) {
+				l("=> $section/$page is in toc.yml but no file is corresponding.");
+			}
+		}
+		
+		$not_in_toc = check_diff_multi($clean_sections, $final_sections);
+		foreach($not_in_toc as $section => $pages) {
+			foreach ($pages as $page) {
+				l("=> $section/$page is missing from toc.yml");
+			}
+		}
+	}
+	
 
     $content = "<ul class=nav>\n";
-
-    foreach ($sections as $section => $pages) {
-
+    foreach ($final_sections as $section => $pages) {
         $content .= "<li><strong>$section</strong><ul class=nav>\n";
         foreach ($pages as $page) {
-            $page = str_replace('.md', '', $page);
             $content .= "<li><a href='{{site.github.url}}$base_url/$section/$page.html'>$page</a></li>\n";
         }
         $content .= "</ul></li>\n";
     }
-
     $content .= "</ul>\n";
 
     file_put_contents($destination, $content);
@@ -121,8 +165,6 @@ foreach ($files as $project => $components) {
     foreach ($components as $component => $sections) {
        l("\nGenerating $project -> $component");
 
-        //TODO :: order the pages according to toc.yml
-
         //generate table of contents
         $toc = "toc_" . slugify("{$project}_{$component}");
         writeToc("/$project/$component", $sections, "$docpath/_includes/{$toc}.html");
@@ -157,13 +199,11 @@ foreach ($files as $project => $components) {
 }
 
 // Prepare homepage
-$content = "";
+$content = "---\nlayout: default\ntitle: Index\ncomponent: Documentation\n---\n";
 foreach ($homepage as $project => $components) {
     $content .= "\n## $project\n";
     foreach ($components as $component => $link) {
         $content .= "### [$component]({{site.github.url}}/$project/$component/$link)\n";
     }
 }
-
-$header = "---\nlayout: default\ntitle: Index\ncomponent: Documentation\n---\n";
-file_put_contents("$docpath/index.md", $header . $content);
+file_put_contents("$docpath/index.md", $content);

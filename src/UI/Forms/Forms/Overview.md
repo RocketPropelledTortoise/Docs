@@ -1,5 +1,3 @@
-# Overview
-
 ## Available fields
 
 A lot of fields are available by default, you can also add your own ones

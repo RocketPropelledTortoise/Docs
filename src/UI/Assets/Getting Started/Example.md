@@ -1,5 +1,5 @@
 
-### Declare a library
+## Declare a library
 
 To declare a library you have to listen for the `rocket.assets.js` and `rocket.assets.css` events.
 

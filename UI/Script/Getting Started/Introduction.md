@@ -4,8 +4,6 @@ layout: toc_ui-script
 component: UI / Script
 
 ---
-#Introduction
-
 ## About
 
 In modern web applications, script execution should be done at the end of a page's loading.

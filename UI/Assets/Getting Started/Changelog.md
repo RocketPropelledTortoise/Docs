@@ -4,8 +4,6 @@ layout: toc_ui-assets
 component: UI / Assets
 
 ---
-# Changelog
-
 ## Future
 
 - Support real dependencies declaration, for the moment we create packages that combine the libraries

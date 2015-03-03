@@ -1,5 +1,3 @@
-# Introduction
-
 ## About
 In any web application you need to load Javascript and CSS files to work.
 With more and more plugins, parts and modules, you need an optimal way to load them.

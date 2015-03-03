@@ -4,8 +4,6 @@ layout: toc_ui-forms
 component: UI / Forms
 
 ---
-# Changelog
-
 ## Future
 - Finish Documentation
 - Finish binding to Laravel Validator

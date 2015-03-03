@@ -4,9 +4,8 @@ layout: toc_ui-forms
 component: UI / Forms
 
 ---
-## Install
 
-Via Composer
+## Via Composer
 
 ``` bash
 $ composer require rocket/forms

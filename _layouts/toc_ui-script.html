@@ -8,7 +8,10 @@
     {% include nav.html %}
 
     <aside id=nav>{% include toc_ui-script.html %}</aside>
-    <section id=content>{{ content }}</section>
+    <section id=content>
+		<h1>{{ title }}</h1>
+		{{ content }}
+	</section>
     
     {% include footer.html %}
   </body>

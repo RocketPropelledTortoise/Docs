@@ -1,5 +1,3 @@
-# Template Sections
-
 You can freely use sections in blade with the following names:
 
 ### <head>

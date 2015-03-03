@@ -4,8 +4,6 @@ layout: toc_core-taxonomy
 component: Core / Taxonomy
 
 ---
-# Introduction
-
 ## About
 With this module you can tag any content type with any number of tags.
 

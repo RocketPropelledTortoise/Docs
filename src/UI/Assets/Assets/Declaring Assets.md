@@ -1,5 +1,5 @@
 
-### Declare a library
+## Declare a library
 
 To declare a library you have to listen for the `rocket.assets.js` and `rocket.assets.css` events.
 
@@ -56,7 +56,7 @@ Event::listen(
 );
 ```
 
-### Change an asset
+## Change an asset
 
 When you add an element to the Asset manager, it is simply by key => value, so if you call `set` again with the same key but another asset it will replace it and when you require it will take your file instead of the default one.
 
