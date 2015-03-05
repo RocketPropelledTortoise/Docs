@@ -4,7 +4,6 @@ layout: toc_core-taxonomy
 component: Core / Taxonomy
 
 ---
-
 The basic definition of a term is:
 
 - A term contains a __title__ and a __description__.
@@ -20,18 +19,21 @@ The minimum to create a term is the title and the `vocabulary_id`, apart from `g
 
 By default, if you don't specify the language, it will use the current language.
 
-    // creating a simple term
-    $id = Taxonomy::getTermId('The title', 'tag');
+```php
+// creating a simple term
+$id = Taxonomy::getTermId('The title', 'tag');
 
-    // creating a term for another language
-    $id = Taxonom::getTermId('Un terme', 'tag', 2);
-
+// creating a term for another language
+$id = Taxonom::getTermId('Un terme', 'tag', 2);
+```
 
 ### Creating a category
 
 A category is nothing more than a term with the category type.
 
-    $id = Taxonomy::getTermId('Testing', 'tag', null, Taxonomy::TERM_CATEGORY)
+```php
+$id = Taxonomy::getTermId('Testing', 'tag', null, Taxonomy::TERM_CATEGORY)
+```
 
 ### Creating a lot of terms a once
 
@@ -40,82 +42,103 @@ A category is nothing more than a term with the category type.
 The creation of a lot of terms can be done for multiple vocabularies.
 The return of the function is an array of ids with no separation between the vocabularies.
 
-    $terms = [
-        'tag' => ['Doc', 'Tutorial'],
-        'artist' => ['Indochine', 'Dionysos']
-    ];
+```php
+$terms = [
+    'tag' => ['Doc', 'Tutorial'],
+    'artist' => ['Indochine', 'Dionysos']
+];
 
-    $ids = Taxonomy::getTermIds($terms);
+$ids = Taxonomy::getTermIds($terms);
+```
 
 ## Retrieving a term from database
 
-    $id = Taxonomy::getTermId('The title', 'tag');
+```php
+$id = Taxonomy::getTermId('The title', 'tag');
 
-    $term = Taxonomy::getTerm($id);
+$term = Taxonomy::getTerm($id);
+```
 
 ### Printing a term
 
 You can simply output a term's title by echoing it.
 
-   echo $term;
+```php
+echo $term;
+```
 
 Or you can use these methods:
 
-    echo $term['title'];
-    echo $term->title();
+```php
+echo $term['title'];
+echo $term->title();
+```
 
 You can also get the description this way:
 
-    echo $term['description'];
-    echo $term->description();
+```php
+echo $term['description'];
+echo $term->description();
+```
 
 ### Retrieving other languages
 
 As a a vocabulary can be multilingual, when a term is retrieved it's with all it's languages so you can use them right away:
 
-    echo $term->title('fr');
-    echo $term->description('fr');
+```php
+echo $term->title('fr');
+echo $term->description('fr');
+```
 
 If the language has not been translated, it will output the text in the language in which it was created, see with the following example:
 
-    $id = Taxonomy::getTermId('The title', 'tag');
-    $term = Taxonomy::getTerm($id);
+```php
+$id = Taxonomy::getTermId('The title', 'tag');
+$term = Taxonomy::getTerm($id);
 
-    echo $term->title(); // The title
-    echo $term->title('fr'); // The title
+echo $term->title(); // The title
+echo $term->title('fr'); // The title
 
-    $language = $term->editLanguage('fr') //TermData
-    $language->title = 'Le titre';
-    $language->save();
+$language = $term->editLanguage('fr') //TermData
+$language->title = 'Le titre';
+$language->save();
 
-    echo $term->title('fr'); // Le titre
+echo $term->title('fr'); // Le titre
+```
 
 To check if a language is already translated or not there is the `translated` method
 
-    $id = Taxonomy::getTermId('The title', 'tag');
-    $term = Taxonomy::getTerm($id);
+```php
+$id = Taxonomy::getTermId('The title', 'tag');
+$term = Taxonomy::getTerm($id);
 
-    echo $term->translated('fr'); // false
+echo $term->translated('fr'); // false
 
-    $language = $term->editLanguage('fr') //TermData
-    $language->title = 'Le titre';
-    $language->save();
+$language = $term->editLanguage('fr') //TermData
+$language->title = 'Le titre';
+$language->save();
 
-    echo $term->translated('fr'); // true
+echo $term->translated('fr'); // true
+```
 
 ### Simple term or category ?
 
 A term can be one of `Taxonomy::TERM_CONTENT` or `Taxonomy::TERM_CATEGORY` this can be checked with
 
-
-    $term->getType();
+```php
+$term->getType();
+```
 
 or
 
-    $term->isSubcategory();
+```php
+$term->isSubcategory();
+```
 
 ### Term ID
 
 If needed, you can also get the term's id.
 
-    $term->id();
+```php
+$term->id();
+```
