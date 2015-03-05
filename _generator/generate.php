@@ -25,7 +25,7 @@ function check_diff_multi($array1, $array2){
 				$res = check_diff_multi($val, $array2[$key]);
 				if (!empty($res)) {
 					$result[$key] = $res;
-				} 
+				}
 			}
 		} else {
 			$result[$key] = $val;
@@ -77,9 +77,9 @@ function addHeaderToPage($source, $destination, array $options)
 function writeToc($base_url, $sections, $destination)
 {
 	global $basepath;
-	
+
 	l("Generating Table of content in $destination");
-	
+
 	$clean_sections = [];
     foreach ($sections as $section => $pages) {
         foreach ($pages as $page) {
@@ -90,14 +90,14 @@ function writeToc($base_url, $sections, $destination)
 	$final_sections = $clean_sections;
 	if (file_exists($basepath . $base_url . "/toc.yml")) {
 		$final_sections = (new Parser())->parse(file_get_contents($basepath . $base_url . "/toc.yml"));
-		
+
 		$not_in_files = check_diff_multi($final_sections, $clean_sections);
 		foreach($not_in_files as $section => $pages) {
 			foreach ($pages as $page) {
 				l("=> $section/$page is in toc.yml but no file is corresponding.");
 			}
 		}
-		
+
 		$not_in_toc = check_diff_multi($clean_sections, $final_sections);
 		foreach($not_in_toc as $section => $pages) {
 			foreach ($pages as $page) {
@@ -105,7 +105,7 @@ function writeToc($base_url, $sections, $destination)
 			}
 		}
 	}
-	
+
 
     $content = "<ul class=nav>\n";
     foreach ($final_sections as $section => $pages) {
@@ -175,6 +175,11 @@ foreach ($files as $project => $components) {
             && in_array("Introduction.md", $sections["Getting Started"])
         ) {
             $homepage[$project][$component] = "Getting Started/Introduction.html";
+
+            // Index page short link
+            $redirect = file_get_contents("$templates/redirect.html");
+            $redirect = str_replace('{{link}}', "$project/$component/" . $homepage[$project][$component], $redirect);
+            file_put_contents("$docpath/$project/$component/index.html", $redirect);
         } else {
             addHeaderToPage(
 				"$templates/dummy_index.md",
