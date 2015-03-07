@@ -170,6 +170,8 @@ foreach ($files as $project => $components) {
         writeToc("/$project/$component", $sections, "$docpath/_includes/{$toc}.html");
         writeComponentLayout($toc);
 
+        mkdirIfNonExistent("$docpath/$project/$component");
+
         //find or create homepage
         if (array_key_exists("Getting Started", $sections)
             && in_array("Introduction.md", $sections["Getting Started"])
