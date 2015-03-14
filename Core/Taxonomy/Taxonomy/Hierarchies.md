@@ -4,8 +4,13 @@ layout: toc_core-taxonomy
 component: Core / Taxonomy
 
 ---
+A Vocabulary can be one of three hierarchy types:
 
-This documentation needs to be expanded...
+- None: no hierarchy
+- Simple: one parent per term
+- Multiple: each term can have many parents
+
+You can use the following methods to edit the parents of a term
 
 ## Adding a parent
 
