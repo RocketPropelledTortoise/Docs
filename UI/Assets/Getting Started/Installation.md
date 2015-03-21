@@ -6,4 +6,4 @@ component: UI / Assets
 ---
 ## Service Provider
 
-`Rocket\UI\Assets\ServiceProvider`
+`Rocket\UI\Assets\Support\Laravel5\ServiceProvider`

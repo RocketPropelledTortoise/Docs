@@ -1,3 +1,3 @@
 Add this service provider
 
-	`Illuminate\Support\ServiceProvider\FormsServiceProvider`
+	`Rocket\UI\Forms\Support\Laravel5\ServiceProvider`

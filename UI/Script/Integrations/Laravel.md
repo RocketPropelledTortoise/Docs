@@ -11,5 +11,5 @@ With the laravel Integration you benefit from
 
 ## Installing
 
-- ServiceProvider : `Rocket\UI\Script\Support\Laravel\ScriptServiceProvider`
-- Alias : `'JS' => 'Rocket\UI\Script\Support\Laravel\ScriptFacade'`
+- ServiceProvider : `Rocket\UI\Script\Support\Laravel\ServiceProvider`
+- Alias : `'JS' => 'Rocket\UI\Script\Support\Laravel\Facade'`
